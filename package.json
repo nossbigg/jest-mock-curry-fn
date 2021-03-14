@@ -1,0 +1,7 @@
+{
+  "name": "jest-mock-curry-fn",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "author": "nossbigg<chenggibson@gmail.com>",
+  "license": "MIT"
+}
