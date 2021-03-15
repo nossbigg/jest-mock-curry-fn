@@ -1,1 +1,1 @@
-export * from "./makeMockCurryFn";
+export * from './makeMockCurryFn'

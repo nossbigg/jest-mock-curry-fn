@@ -4,30 +4,30 @@ import {
   chainMockCurryFnsReturns,
   setTailMockFnReturnValue,
   makeExpectCurriedMockFns,
-} from "./utils";
-import { MakeMockCurryFnOptions, MakeMockCurryFnReturn } from "./typedefs";
+} from './utils'
+import { MakeMockCurryFnOptions, MakeMockCurryFnReturn } from './typedefs'
 
 export const makeMockCurryFn = (
   options: MakeMockCurryFnOptions
 ): MakeMockCurryFnReturn => {
-  const { nCurriedFns, tailFnReturnValue } = options;
+  const { nCurriedFns, tailFnReturnValue } = options
 
-  validateMockCurryFnOptions(options);
+  validateMockCurryFnOptions(options)
 
-  const mockFns = makeMockFns(nCurriedFns);
-  const tailMockFnIndex = nCurriedFns - 1;
+  const mockFns = makeMockFns(nCurriedFns)
+  const tailMockFnIndex = nCurriedFns - 1
 
-  const headMockFn = mockFns[0];
-  const tailMockFn = mockFns[tailMockFnIndex];
+  const headMockFn = mockFns[0]
+  const tailMockFn = mockFns[tailMockFnIndex]
 
-  chainMockCurryFnsReturns(mockFns);
+  chainMockCurryFnsReturns(mockFns)
 
-  setTailMockFnReturnValue(mockFns, tailFnReturnValue);
+  setTailMockFnReturnValue(mockFns, tailFnReturnValue)
 
   const expectMockFnsCalledWith = makeExpectCurriedMockFns({
     mockFns,
     index: 0,
-  });
+  })
 
   return {
     expectMockFnsCalledWith,
@@ -35,5 +35,5 @@ export const makeMockCurryFn = (
     tailMockFn,
     mockFns,
     options,
-  };
-};
+  }
+}
