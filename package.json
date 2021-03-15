@@ -3,6 +3,20 @@
   "version": "0.0.0",
   "main": "dist/index.js",
   "author": "nossbigg<chenggibson@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nossbigg/jest-mock-curry-fn.git"
+  },
+  "homepage": "https://github.com/nossbigg/jest-mock-curry-fn",
+  "keywords": [
+    "jest",
+    "testing",
+    "mock",
+    "function",
+    "curry",
+    "curried",
+    "currying"
+  ],
   "license": "MIT",
   "scripts": {
     "test": "jest --watch",
@@ -30,5 +44,7 @@
   "peerDependencies": {
     "jest": "*"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
