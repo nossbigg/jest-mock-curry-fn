@@ -1,5 +1,7 @@
 # jest-mock-curry-fn
 
+[![npm version](https://badge.fury.io/js/jest-mock-curry-fn.svg)](https://badge.fury.io/js/jest-mock-curry-fn)
+
 Easier testing with curry functions + jest 🧪
 
 # Who's it for?
