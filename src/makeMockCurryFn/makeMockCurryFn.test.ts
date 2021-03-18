@@ -15,11 +15,24 @@ describe('makeMockCurryFn', () => {
     expect(result).toEqual(123)
   })
 
-  it('does assertions on mock fns correctly', () => {
-    const {
-      curryFn: { expectMockFnsCalledWith },
-    } = doTest()
-    expectMockFnsCalledWith(1)(2)(3)
+  describe('expectMockFnsCalledWith', () => {
+    it('does assertions on mock fns correctly', () => {
+      const {
+        curryFn: { expectMockFnsCalledWith },
+      } = doTest()
+      expectMockFnsCalledWith(1)(2)(3)
+    })
+
+    it('returns undefined after final fn assertion is done', () => {
+      const {
+        curryFn: { expectMockFnsCalledWith },
+      } = doTest()
+
+      const tailAssertionFnReturn = expectMockFnsCalledWith(expect.anything())(
+        expect.anything()
+      )(expect.anything())
+      expect(tailAssertionFnReturn).toBe(undefined)
+    })
   })
 
   it('passes options', () => {
